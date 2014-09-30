@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html>
+
+<head>
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="vendor/bootstrap-css-only/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- nonbower css-->
+
+  <!--nonbower endbuild -->
+  <!-- endbuild -->
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link rel="stylesheet" href="styles/app.css">
+  <!-- endbuild -->
+</head>
+
+<body ng-app="mainApp">
+  <nav class="navbar-app">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="col-sm-8 col-sm-offset-2 ng-scope">
+          <div class="logo-banner"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <!-- angular templating -->
+      <!-- this is where content will be injected -->
+      <div ng-view></div>
+      <div class="view-loader" ng-show="loadingView">
+        Loading ...
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <p class="footer-text text-right"><small>Powered by</small> <span class="pro">ProKarma &nbsp;</span></p>
+  
+  </div>
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/angular-route/angular-route.min.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="app.js"></script>
+  <script src="routes.js"></script>
+  <script src="modules/config/config-constant.js"></script>
+  <script src="modules/recharge/confirm/confirm-controller.js"></script>
+  <script src="modules/recharge/home/home-controller.js"></script>
+  <script src="modules/recharge/preview/preview-controller.js"></script>
+  <script src="modules/recharge/recharge.js"></script>
+  <script src="modules/recharge/recharge-service.js"></script>
+  <script src="modules/common/common-directive.js"></script>
+  <script src="modules/common/common-filter.js"></script>
+  <script src="modules/common/common.js"></script>
+
+  <!-- endbuild -->
+
+</body>
+
+</html>
